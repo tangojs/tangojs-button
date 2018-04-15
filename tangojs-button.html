@@ -1,6 +1,6 @@
 <link rel="import" href="../polymer/polymer-element.html">
 <link rel="import" href="../paper-button/paper-button.html">
-<script src="node_modules/tangojs-web-components/dist/tangojs-web-components.js"></script>
+<link rel="import" href="../tangojs-polymer/with-tango-command.html">
 
 <dom-module id="tangojs-button">
   <template>
@@ -21,16 +21,8 @@
      * @polymer
      * @demo demo/index.html
      */
-    class TangojsButton extends tangojs.web.util.mixins.withTangoCommand(Polymer.Element) {
+    class TangojsButton extends Tangojs.withTangoCommand(Polymer.Element) {
       static get is() { return 'tangojs-button'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'tangojs-button'
-          }
-        };
-      }
     }
 
     window.customElements.define(TangojsButton.is, TangojsButton);
